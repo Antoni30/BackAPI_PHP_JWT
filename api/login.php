@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $jwt = JWT::encode($payload, SECRET_KEY, 'HS256');
 
             http_response_code(200);
-            echo json_encode(array("message" => "Login exitoso", "token" => $jwt));
+            echo json_encode(array("ID" => $user['id'],"message" => "Login exitoso", "token" => $jwt ,"username" => $username ));
         } else {
             http_response_code(401);
             echo json_encode(array("error" => "Credenciales inválidas"));

@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         User::create_user($data['username'], $data['password'], $data['email'], $data['nombre_completo']);
 
         http_response_code(200);
-        echo json_encode(array("message" => "Usuario Creado", "token" => $jwt));
+        echo json_encode(array("success" => true));
     } else {
 
         http_response_code(400);
